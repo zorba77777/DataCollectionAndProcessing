@@ -8,7 +8,7 @@ from lesson4.avitoparse.settings import mongo_client
 
 class AvitoparsePipeline(object):
     def process_item(self, item, spider):
-        data_base = mongo_client(spider.name)
+        data_base = mongo_client[spider.name]
         collection = data_base[type(item).__name__]
         collection.insert(item)
         return item
