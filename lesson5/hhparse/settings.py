@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for avitoparse project
+# Scrapy settings for hhparse project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,14 +8,15 @@
 #     https://doc.scrapy.org/en/latest/topics/settings.html
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+
 from pymongo import MongoClient
 
 mongo_client = MongoClient("localhost", 27017)
 
-BOT_NAME = 'avitoparse'
+BOT_NAME = 'hhparse'
 
-SPIDER_MODULES = ['avitoparse.spiders']
-NEWSPIDER_MODULE = 'avitoparse.spiders'
+SPIDER_MODULES = ['hhparse.spiders']
+NEWSPIDER_MODULE = 'hhparse.spiders'
 LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -46,14 +47,14 @@ DEFAULT_REQUEST_HEADERS = {
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'ru',
   'Connection': 'keep-alive',
-  'Referer': 'https://avito.ru/',
-  'Host': 'avito.ru'
+  'Referer': 'https://naryan-mar.hh.ru/',
+  'Host': 'naryan-mar.hh.ru'
 }
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'avitoparse.middlewares.AvitoparseSpiderMiddleware': 543,
+#    'hhparse.middlewares.HhparseSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
@@ -72,7 +73,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'lesson4.avitoparse.pipelines.AvitoparsePipeline': 300
+    'lesson5.hhparse.pipelines.HhparsePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
